@@ -1,0 +1,4 @@
+coursename: "CS 201"
+baseurl: "/cs201-fall2021"
+markdown: kramdown
+highlighter: rouge
