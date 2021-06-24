@@ -1,0 +1,150 @@
+table.thin {
+  border-width: 1px 1px 1px 1px;
+  border-spacing: 2px;
+  border-style: solid solid solid solid;
+  border-color: black black black black;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+table.thin th {
+  border-width: 1px 1px 1px 1px;
+  padding: 2px 2px 2px 2px;
+  border-style: inset inset inset inset;
+  border-color: black black black black;
+  background-color: white;
+}
+
+table.thin td {
+  border-width: 1px 1px 1px 1px;
+  padding: 2px 2px 2px 2px;
+  border-style: inset inset inset inset;
+  border-color: black black black black;
+  background-color: white;
+}
+
+table.courses {
+  border-width: 1px 1px 1px 1px;
+  border-spacing: 2px;
+  border-style: solid solid solid solid;
+  border-color: black black black black;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+table.courses th {
+  border-width: 1px 1px 1px 1px;
+  padding: 2px 2px 2px 2px;
+  border-style: inset inset inset inset;
+  border-color: black black black black;
+  background-color: silver;
+}
+
+table.courses td {
+  border-width: 1px 1px 1px 1px;
+  padding: 2px 2px 2px 2px;
+  border-style: inset inset inset inset;
+  border-color: black black black black;
+  background-color: white;
+}
+
+table.courses td ul {
+	list-style-type: none;
+	margin: 0; 
+	padding: 0; 
+}
+
+#header {
+  border-top:1px solid #000;
+  border-right:1px solid #000;
+  border-left:1px solid #000;
+  border-bottom:1px solid #000;
+  padding-left: 1em;
+}
+
+#sidebar {
+  float: right;
+  width: 25%;
+  border-top:1px solid #000;
+  border-right:1px solid #000;
+  border-left:1px solid #000;
+  border-bottom:1px solid #000;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  padding: 1em;
+  font-size: 90%;
+}
+
+#sidebar h3 {
+  color: #306a38;
+  border-bottom: 1px solid #000;
+}
+
+#content {
+  margin-top: 1em;
+}
+
+#content h2 {
+  color: #306a38;
+}
+
+p.boxed {
+  border-top:1px solid #000;
+  border-right:1px solid #000;
+  border-left:1px solid #000;
+  border-bottom:1px solid #000;
+
+}
+
+/* New styles */
+#title {
+	/*background: #ccf;*/
+	padding: 10px;
+	color: black;
+	font-size: 180%;
+	font-weight: bold;
+	/*vertical-align: top;*/
+}
+
+#title img {
+	margin-right: 10px;
+	border: 0;
+}
+
+.funBorder {
+	height: 21px;
+	background-image:url('funBorder.png');
+	background-repeat:repeat-x;
+}
+
+html body.fancy {
+	background: #87cefa;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-family: Georgia, Times, serif;
+	font-size: 18px;
+}
+
+html body.fancy h1,
+html body.fancy h2 {
+	color: #666;
+	border-bottom: 2px solid #666;
+}
+
+html body.fancy dt {
+	font-weight: bold;
+	font-style: italic;
+}
+html body.fancy dd {
+	margin-bottom: 16px;
+}
+
+.center-content {
+	width: 860px;
+	margin: 0 auto;
+	background: white;
+	border-left: 8px #00bfff solid;
+	border-right: 8px #00bfff solid;
+	padding: 10px 60px;
+}
