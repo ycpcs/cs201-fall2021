@@ -13,17 +13,16 @@ Welcome to the website for CS 201, Fundamentals of Computer Science II, at York 
 
 * [Syllabus](syllabus.html)
 * [Lecture Schedule/Readings](schedule.html)
-* [Assignments](assign/index.html)
+* [Lecture Example code](examples/index.html)
 * [Labs](labs/index.html)
-* [Importing and Submitting](resources/importSubmit.html)
+* [Assignments](assign/index.html)
 * [Resources](resources/index.html)
 * [Tutoring](tutoring.html)
 * [Marmoset (submission server)](https://cs.ycp.edu/marmoset)
 * [CloudCoder (practice problems)](https://cs.ycp.edu/cloudcoder)
 * [CodingBat Java recursion problems](http://codingbat.com/java/Recursion-1)
 * [Practice Exams](practice/index.html)
-* [Example code](examples/index.html)
-* [JDK 8 API documentation](https://docs.oracle.com/javase/8/docs/api/)
+* [JDK 16 API documentation](https://docs.oracle.com/en/java/javase/16/docs/api/index.html)
 
 ## News
 * **Aug 25** &mdash; Welcome back!
