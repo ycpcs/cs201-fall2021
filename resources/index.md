@@ -56,9 +56,9 @@ If you installed Cygwin for CS101, skip to step 2.
 
 All labs, assignments, and exams will be submitted to the [Marmoset submission server](https://cs.ycp.edu/marmoset) through the IntelliJ IDEA Terminal. To open the Terminal, at the bottom of the IntelliJ window click the **Terminal** menu item which should open the Terminal in the lower IDE pane. Navigate into the proper folder and type 
 
-	```cpp
-	$ make submit
-	```
+```cpp
+$ make submit
+```
 
 then enter your Marmoset username and password and verify that the submission was successful.
 
