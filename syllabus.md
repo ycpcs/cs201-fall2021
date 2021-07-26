@@ -18,7 +18,7 @@ Office Hours: by appointment
  Section  | Days      |  Time       | Room    | Final Exam
  -------- | --------- |  ---------- | ------- | ----------
 101       | Wed/Fri   | 10:00-11:15 | KEC 123 | Fri, Dec 10, 10:15am-12:15pm
-102       | Wed/Fri   | 12:00-1:15  | KEC 119 | Fri, Dec 11, 12:45am-2:45pm
+102       | Wed/Fri   | 12:00-1:15  | KEC 123 | Fri, Dec 11, 12:45am-2:45pm
 
 ### Course Description
 
