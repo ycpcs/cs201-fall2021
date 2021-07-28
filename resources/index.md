@@ -36,11 +36,25 @@ All labs, assignments, and exams will be submitted to the [Marmoset submission s
 
 We will be using [Cygwin](http://cygwin.com/) as our terminal program. 
 
-If you installed Cygwin for CS101, skip to step 2.
+Make sure you have first installed IntelliJ and set up your CS201 project as described above. If you already installed Cygwin for CS101, skip to step 2.
 
 1. Install [Cygwin](http://cygwin.com/) and the various packages as described in the [CS101 Cygwin installation guide](https://ycpcs.github.io/cs101-spring2021/installCygwin.html).
 
-2. Open IntelliJ
+2. Open IntelliJ and the CS201 project, then select **File -> Settings** from the menubar.
+
+> <img src="images/IntelliJSettings.png" alt="IntelliJ Select Settings Window" height="500"/>
+
+3. In the **Settings** dialog, select the **Tools->Terminal** option, then in the **Shell path:** setting, click on the folder icon.
+
+> <img src="images/IntelliJTools.png" alt="IntelliJ Tools Settings Window" height="500"/>
+
+4. In the file explorer window, navigate to **C:\cygwin64\bin\** and select **bash.exe** and click **OK** which will set IntelliJ's terminal window to use the Cygwin bash shell.
+
+> <img src="images/IntelliJTools.png" alt="IntelliJ Tools Settings Window" height="500"/>
+
+5. If everything is configured correctly, when you select the **Terminal** tab in the lower left corner of IntelliJ, it should open up a terminal pane that displays a Cygwin prompt.
+
+> <img src="images/IntelliJCygwin.png" alt="IntelliJ Cygwin Window" height="500"/>
 
 ### Mac OSX
 
