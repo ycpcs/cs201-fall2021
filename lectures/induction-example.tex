@@ -1,0 +1,44 @@
+\documentclass{article}
+\usepackage{fullpage}
+\usepackage{nopageno}
+\usepackage{amsmath}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{.2in}
+
+\begin{document}
+
+Proof by induction that
+\[ \sum_{i=0}^{n}{i^2} = \frac{n(n+1)(2n+1)}{6} \] for all integers $n \ge 1$.
+
+{\bf Induction hypothesis}: The general case of the induction hypothesis, $IH(n)$, is
+\[ f(n) = \sum_{i=0}^{n}{i^2} = \frac{n(n+1)(2n+1)}{6} \]
+
+{\bf Basis step}: $IH(1)$ predicts that
+\[ f(1) = \sum_{i=0}^{1}{i^2} = \frac{1(1+1)(2\cdot 1+1)}{6} = \frac{1\cdot 2\cdot 3}{6} = \frac{6}{6} = 1 \]
+This is the sum of the squares from 0 to 1, so $IH(1)$ is true.
+
+{\bf Induction step}:
+
+Expectation: $IH(n+1)$ is
+\[ f(n+1) = \sum_{i=0}^{n+1}{i^2} = \frac{(n+1)(n+2)(2(n+1)+1)}{6} \]
+
+Connecting cases for $n$ and $n+1$: we can observe that
+\begin{alignat*}{2}
+f(n+1) = \sum_{i=0}^{n+1}{i^2} &= 1^2 + 2^2 + 3^3 + \ldots + n^2 + (n+1)^2 \\
+                               &= \sum_{i=0}^{n}{i^2} + (n+1)^2 \\
+                               &= f(n) + (n+1)^2
+\end{alignat*}
+
+Assuming $IH(n)$ is true, then
+\begin{alignat*}{2}
+f(n+1) &= f(n) + (n+1)^2 \\
+       &= \frac{n(n+1)(2n+1)}{6} + (n+1)^2 \\
+       &= \frac{2n^3 + 9n^2 + 13n + 6}{6} \\
+       &= \frac{(n+1)(n+2)(2(n+1)+1)}{6}
+\end{alignat*}
+
+This matches the expectation, proving that if $IH(n)$ is true, then $IH(n+1)$ must also
+be true.
+
+\end{document}
