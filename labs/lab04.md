@@ -5,13 +5,13 @@ title: "Lab 4: Arrays and ArrayLists"
 
 ## Getting Started
 
-Download [CS201\_Lab03\_Gradle.zip](CS201_Lab03_Gradle.zip). Copy and extract the zip file into your **CS201** directory. Import it into your **CS201** IntelliJ project using
+Download [CS201\_Lab04\_Gradle.zip](CS201_Lab04_Gradle.zip). Copy and extract the zip file into your **CS201** directory. Import it into your **CS201** IntelliJ project using
 
 > **File&rarr;New&rarr;Module from Existing Sources...**
 
-Select the **CS201\_Lab03\_Gradle** directory and in the **Import Module** dialog select **Import module from external model&rarr;Gradle** and click **Finish**.
+Select the **CS201\_Lab04\_Gradle** directory and in the **Import Module** dialog select **Import module from external model&rarr;Gradle** and click **Finish**.
 
-You should see a project called **CS201\_Lab03\_Gradle** in the Project window.
+You should see a project called **CS201\_Lab04\_Gradle** in the Project window.
 
 Run the program by right-clicking on the file **ArrayandArrayList.java** in the **src/main/java/** directory, and then choosing
 
