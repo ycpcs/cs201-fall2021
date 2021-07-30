@@ -17,15 +17,15 @@ To begin, run the program by right-clicking on the file **StartLab.java** in the
 
 > **Run 'StartLab.main()'**
 
-In the console window, type **yes** when prompted which should copy the **Coins.java** and **CoinsTest.java** files from your [Lab 2](lab2.html).
+In the console window, type **yes** when prompted which should copy the **Coins.java** and **CoinsTest.java** files from your [Lab 2](lab02.html).
 
-In this lab, you will build upon the classes from [Lab 2](lab2.html) to add several overloaded constructors along with corresponding unit tests.
+In this lab, you will build upon the classes from [Lab 2](lab02.html) to add several overloaded constructors along with corresponding unit tests.
 
 **There is no executable application for this lab.** Instead, we will test the class implementation by running the unit tests by right-clicking on the file **CoinsTest.java** in the **src/test/java/** directory, and then choosing
 
-> **Run 'CoinsTest'**
+> **Run 'CoinsTest (1)'**
 
-Or subsequently by selecting **CoinsTest(1)** from the dropdown list in the top right corner of the IDE and clicking the green arrow.
+Or subsequently by selecting **CoinsTest** from the dropdown list in the top right corner of the IDE and clicking the green arrow.
 
 ## Your Task
 
