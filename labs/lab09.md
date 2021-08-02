@@ -23,7 +23,7 @@ In this lab, you will build upon the classes from [Lab 8](lab08.html).
 
 **There is no executable application for this lab.** Instead, we will test the modified class implementations by running the unit tests by right-clicking on the file **CarTest.java**, **BoatTest.java**, and **AirplaneTest.java** in the **src/test/java/** directory, and then choosing
 
-> **Run 'CoinsTest (1)'**
+> **Run 'CarTest (1)'**
 
 (and similarly for **BoatTest** and **AirplaneTest**). Or subsequently by selecting **CarTest**, etc. from the dropdown list in the top right corner of the IDE and clicking the green arrow.
 
