@@ -3,16 +3,6 @@ layout: default
 title: "Lab 1: Dog Years"
 ---
 
-Write a Java program that will prompt the user for their name and age, and translate their age from years to dog years. (1 year equals 7 dog years.)
-
-Example session (user input in **bold**):
-
-<pre>
-What is your name? <b>Dave</b>
-How old are you, Dave? <b>41</b>
-Dave, in dog years you are 287 years old
-</pre>
-
 ## Getting Started
 
 Download [CS201\_Lab01\_Gradle.zip](CS201_Lab01_Gradle.zip). Copy and extract the zip file into your **CS201** directory. Import it into your **CS201** IntelliJ project using
@@ -28,6 +18,18 @@ Run the program by right-clicking on the file **DogYears.java** in the **src/mai
 > **Run 'DogYears.main()'**
 
 Or subsequently by selecting **DogYears** from the dropdown list in the top right corner of the IDE and clicking the green arrow.
+
+## Your Task
+
+Write a Java program that will prompt the user for their name and age, and translate their age from years to dog years. (1 year equals 7 dog years.)
+
+Example session (user input in **bold**):
+
+<pre>
+What is your name? <b>Dave</b>
+How old are you, Dave? <b>41</b>
+Dave, in dog years you are 287 years old
+</pre>
 
 ## Hints
 
