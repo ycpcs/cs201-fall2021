@@ -48,7 +48,7 @@ Make sure you have first installed IntelliJ and set up your CS201 project as des
 
     <img src="images/IntelliJTools.png" alt="IntelliJ Tools Settings Window" height="500"/>
 
-4. In the file explorer window, navigate to **C:\_cygwin64\_bin\_** and select **bash.exe** and click **OK** which will set IntelliJ's terminal window to use the Cygwin bash shell.
+4. In the file explorer window, navigate to **C:/cygwin64/bin/** and select **bash.exe** and click **OK** which will set IntelliJ's terminal window to use the Cygwin bash shell.
 
     <img src="images/IntelliJCygwinPath.png" alt="IntelliJ Cygwin Path Window" height="500"/>
 
