@@ -54,7 +54,7 @@ Make sure you have first installed IntelliJ and set up your CS201 project as des
 
 5. If everything is configured correctly, when you select the **Terminal** tab in the lower left corner of IntelliJ, it should open up a terminal pane that displays a Cygwin prompt.
 
-    <img src="images/IntelliJCygwin.png" alt="IntelliJ Cygwin Window" height="500"/>
+    <img src="images/IntelliJCygwin.png" alt="IntelliJ Cygwin Window" height="400"/>
 
 ### Mac OSX
 
