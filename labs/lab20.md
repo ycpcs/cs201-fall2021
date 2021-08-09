@@ -67,7 +67,7 @@ You should determine the length of the longest word so that the "bars" of the hi
 When you are done, submit the lab to the Marmoset server using the Terminal window in IntelliJ (click **Terminal** at the bottom left of the IDE). Navigate to the directory using
 
 <pre>
-CS201 % <b>cd CS201_Lab20</b>
+CS201 % <b>cd CS201_Lab20_Gradle</b>
 CS201_Lab20_Gradle % <b>make submit</b>
 </pre>
 

@@ -110,7 +110,7 @@ Goodbye
 When you are done, submit the lab to the Marmoset server using the Terminal window in IntelliJ (click **Terminal** at the bottom left of the IDE). Navigate to the directory using
 
 <pre>
-CS201 % <b>cd CS201_Lab04</b>
+CS201 % <b>cd CS201_Lab04_Gradle</b>
 CS201_Lab04_Gradle % <b>make submit</b>
 </pre>
 
