@@ -44,15 +44,11 @@ Make sure you have first installed IntelliJ and set up your CS201 project as des
 
     <img src="images/IntelliJSettings.png" alt="IntelliJ Select Settings Window" height="400"/>
 
-3. In the **Settings** dialog, select the **Tools->Terminal** option, then in the **Shell path:** setting, click on the folder icon.
+3. In the **Settings** dialog, select the **Tools->Terminal** option, then replace what is in the **Shell path:** setting with **"C:\cygwin64\bin\sh" -lic 'cd "${OLDPWD-.}"; bash'**,
 
-    <img src="images/IntelliJTools.png" alt="IntelliJ Tools Settings Window" height="500"/>
+    <img src="images/IntelliJTerminal.png" alt="IntelliJ Tools Settings Window" height="500"/>
 
-4. In the file explorer window, navigate to **C:/cygwin64/bin/** and select **bash.exe** and click **OK** which will set IntelliJ's terminal window to use the Cygwin bash shell.
-
-    <img src="images/IntelliJCygwinPath.png" alt="IntelliJ Cygwin Path Window" height="500"/>
-
-5. If everything is configured correctly, when you select the **Terminal** tab in the lower left corner of IntelliJ, it should open up a terminal pane that displays a Cygwin prompt.
+4. If everything is configured correctly, when you select the **Terminal** tab in the lower left corner of IntelliJ, it should open up a terminal pane that displays a Cygwin prompt in the **CS201** project directory.
 
     <img src="images/IntelliJCygwin.png" alt="IntelliJ Cygwin Window" height="400"/>
 
