@@ -10,8 +10,9 @@ title: "Syllabus"
 **Fall 2021**
 
 Instructors: 
-- <a href="http://faculty.ycp.edu/~dbabcock">Dr. David Babcock</a>, <dbabcock@ycp.edu>
-- <a href="http://faculty.ycp.edu/~djhake2">Prof. Donald Hake</a>, <djhake2@ycp.edu>
+- 101 - <a href="http://faculty.ycp.edu/~dbabcock">Dr. David Babcock</a>, <dbabcock@ycp.edu>
+- 102 - <a href="http://faculty.ycp.edu/~djhake2">Prof. Donald Hake</a>, <djhake2@ycp.edu>
+- 103 - <a href="http://faculty.ycp.edu/~kkambhampaty">Dr. Krishna Kambhampaty</a>, <kkambhampaty@ycp.edu>
 
 Office Hours: by appointment
 
@@ -19,6 +20,7 @@ Office Hours: by appointment
  -------- | --------- |  ---------- | ------- | ----------
 101       | Wed/Fri   | 10:00-11:15 | KEC 123 | Fri, Dec 10, 10:15am-12:15pm
 102       | Wed/Fri   | 12:00-1:15  | KEC 123 | Fri, Dec 11, 12:45am-2:45pm
+103       | Wed/Fri   | 12:00-1:15  | KEC 124 | Fri, Dec 11, 12:45am-2:45pm
 
 ### Course Description
 
