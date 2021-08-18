@@ -8,6 +8,7 @@ This page links to lecture example code.
 Date     |    File                          
 -------- | --------------------------------
 Aug 25   | [CS201\_Lecture01\_Gradle.zip](CS201_Lecture01_Gradle.zip)  
+Aug 27   | [CS201\_Lecture02\_Gradle.zip](CS201_Lecture02_Gradle.zip)  
 
 <!--
 Additional examples
