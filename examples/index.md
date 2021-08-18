@@ -5,6 +5,11 @@ title: "Example Code"
 
 This page links to lecture example code.
 
+Date     |    File                          
+-------- | --------------------------------
+Aug 25   | [CS201\_Lecture01\_Gradle.zip](CS201_Lecture01_Gradle.zip)  
+
+<!--
 Additional examples
 
 File     | Description                          
@@ -14,7 +19,6 @@ File     | Description
 [ExampleGUI.zip](ExampleGUI.zip) | Example MVC GUI
 [Change.zip](Change.zip)         | Dynamic programming to make optimal change
 
-<!--
 Date     |    File                          
 -------- | --------------------------------
 Feb 18   | [CS201\_Lecture06\_Gradle.zip](CS201_Lecture06_Gradle.zip)  
