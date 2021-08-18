@@ -16,6 +16,9 @@ Any labs not completed by the exam they precede will receive no credit.
 <b>Protip</b>: Work on the labs <i>before</i> coming to class.  This will allow you to ask good questions when we work on the lab in class, and will give you a much better chance of finishing the lab in class.
 </div>
 
-See [Importing and Submitting](../resources/importSubmit.html) for instructions on importing and submitting labs.
+<div class="callout">
+<b>Make sure you have set up the outer project directory properly as described in the Resources tab.</b>
+</div>
+
 
 <script>autogenLabs();</script>
