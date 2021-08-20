@@ -11,7 +11,7 @@ Acknowledgment: The idea for this assignment comes from [Tom Ellman](http://page
 
 ## Getting Started
 
-Download [CS201\_Assign01\_Gradle.zip](CS201_Assign01_Gradle.zip). Copy and extract the zip file into your **CS201** directory. Import it into your **CS201** IntelliJ project using
+Download [CS201\_Assign01\_Gradle.zip](CS201_Assign01_Gradle.zip). Copy and extract the zip file into your **CS201-Fall2021** directory. Import it into your **CS201-Fall2021** IntelliJ project using
 
 > **File&rarr;New&rarr;Module from Existing Sources...**
 
@@ -263,7 +263,7 @@ When you are done, submit the lab to the Marmoset server using the Terminal wind
 Navigate to the directory using
 
 <pre>
-CS201 % <b>cd CS201_Assign01_Gradle</b>
+CS201-Fall2021 % <b>cd CS201_Assign01_Gradle</b>
 CS201_Assign01_Gradle % <b>make submit_ms1</b>
 </pre>
 
@@ -290,7 +290,7 @@ Details:
 Navigate to the directory using
 
 <pre>
-CS201 % <b>cd CS201_Assign01_Gradle</b>
+CS201-Fall2021 % <b>cd CS201_Assign01_Gradle</b>
 CS201_Assign01_Gradle % <b>make submit_ms2</b>
 </pre>
 

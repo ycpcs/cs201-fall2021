@@ -5,6 +5,10 @@ title: "Lab 12: Functors"
 
 ## Getting Started
 
+Download [CS201\_Lab12\_Gradle.zip](CS201_Lab12_Gradle.zip). Copy and extract the zip file into your **CS201-Fall2021** directory. Import it into your **CS201-Fall2021** IntelliJ project using
+
+> **File&rarr;New&rarr;Module from Existing Sources...**
+
 Select the **CS201\_Lab12\_Gradle** directory and in the **Import Module** dialog select **Import module from external model&rarr;Gradle** and click **Finish**.
 
 You should see a project called **CS201\_Lab12\_Gradle** in the Project window.

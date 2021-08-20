@@ -5,7 +5,7 @@ title: "Lab 6: Text File I/O"
 
 ## Getting Started
 
-Download [CS201\_Lab06\_Gradle.zip](CS201_Lab06_Gradle.zip). Copy and extract the zip file into your **CS201** directory. Import it into your **CS201** IntelliJ project using
+Download [CS201\_Lab06\_Gradle.zip](CS201_Lab06_Gradle.zip). Copy and extract the zip file into your **CS201-Fall2021** directory. Import it into your **CS201-Fall2021** IntelliJ project using
 
 > **File&rarr;New&rarr;Module from Existing Sources...**
 
@@ -59,7 +59,7 @@ Once the file is created, it should appear in the **CS201\_Lab06\_Gradle** direc
 When you are done, submit the lab to the Marmoset server using the Terminal window in IntelliJ (click **Terminal** at the bottom left of the IDE). Navigate to the directory using
 
 <pre>
-CS201 % <b>cd CS201_Lab06_Gradle</b>
+CS201-Fall2021 % <b>cd CS201_Lab06_Gradle</b>
 CS201_Lab06_Gradle % <b>make submit</b>
 </pre>
 

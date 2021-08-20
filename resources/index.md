@@ -22,7 +22,7 @@ Select **New Project** which will open the new project dialog
 
 > <img src="images/IntelliJNewProject.png" alt="IntelliJ New Project Window" height="500"/>
 
-Select **Empty Project** from the list on the left and click **Next**. Change the **Project name:** to **CS201** and select the **Project location:** to be the location where you want to keep all your CS201 projects, e.g. **C:/Documents** or **~/Documents/CS201**, and click **Finish**.
+Select **Empty Project** from the list on the left and click **Next**. Change the **Project name:** to **CS201-Fall2021** and select the **Project location:** to be the location where you want to keep all your CS201 projects, e.g. **C:/Documents** or **~/Documents/CS201**, and click **Finish**.
 
 > <img src="images/IntelliJDirectory.png" alt="IntelliJ Directory Window" height="500"/>
 
@@ -36,11 +36,11 @@ All labs, assignments, and exams will be submitted to the [Marmoset submission s
 
 We will be using [Cygwin](http://cygwin.com/) as our terminal program. 
 
-Make sure you have first installed IntelliJ and set up your CS201 project as described above. If you already installed Cygwin for CS101, skip to step 2.
+Make sure you have first installed IntelliJ and set up your CS201-Fall2021 project as described above. If you already installed Cygwin for CS101, skip to step 2.
 
 1. Install [Cygwin](http://cygwin.com/) and the various packages as described in the [CS101 Cygwin installation guide](https://ycpcs.github.io/cs101-spring2021/installCygwin.html).
 
-2. Open IntelliJ and the CS201 project, then select **File -> Settings** from the menubar.
+2. Open IntelliJ and the CS201-Fall2021 project, then select **File -> Settings** from the menubar.
 
     <img src="images/IntelliJSettings.png" alt="IntelliJ Select Settings Window" height="400"/>
 
@@ -48,7 +48,7 @@ Make sure you have first installed IntelliJ and set up your CS201 project as des
 
     <img src="images/IntelliJTerminal.png" alt="IntelliJ Tools Settings Window" height="500"/>
 
-4. If everything is configured correctly, when you select the **Terminal** tab in the lower left corner of IntelliJ, it should open up a terminal pane that displays a Cygwin prompt in the **CS201** project directory.
+4. If everything is configured correctly, when you select the **Terminal** tab in the lower left corner of IntelliJ, it should open up a terminal pane that displays a Cygwin prompt in the **CS201-Fall2021** project directory.
 
     <img src="images/IntelliJCygwin.png" alt="IntelliJ Cygwin Window" height="400"/>
 
