@@ -263,8 +263,9 @@ When you are done, submit the lab to the Marmoset server using the Terminal wind
 Navigate to the directory using
 
 <pre>
-CS201-Fall2021 % <b>cd CS201_Assign01_Gradle</b>
-CS201_Assign01_Gradle % <b>make submit_ms1</b>
+$ <b>cd CS201_Assign01_Gradle</b>
+CS201-Fall2021/CS201_Assign01_Gradle
+$ <b>make submit_ms1</b>
 </pre>
 
 Enter your [Marmoset](https://cs.ycp.edu/marmoset) username and password, if successful you should see
@@ -290,8 +291,9 @@ Details:
 Navigate to the directory using
 
 <pre>
-CS201-Fall2021 % <b>cd CS201_Assign01_Gradle</b>
-CS201_Assign01_Gradle % <b>make submit_ms2</b>
+$ <b>cd CS201_Assign01_Gradle</b>
+CS201-Fall2021/CS201_Assign01_Gradle
+$ <b>make submit_ms2</b>
 </pre>
 
 Enter your [Marmoset](https://cs.ycp.edu/marmoset) username and password, if successful you should see
