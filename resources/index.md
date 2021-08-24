@@ -46,7 +46,9 @@ Make sure you have first installed IntelliJ and set up your CS201-Fall2021 proje
 
 3. In the **Settings** dialog, select the **Tools->Terminal** option, then replace what is in the **Shell path:** setting with
 
+    <pre>
     "C:\cygwin64\bin\sh" -lic 'cd "${OLDPWD-.}"; bash'
+    </pre>
 
     <img src="images/IntelliJTerminal.png" alt="IntelliJ Tools Settings Window" height="500"/>
 
