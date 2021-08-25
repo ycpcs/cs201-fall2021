@@ -14,7 +14,7 @@ Instructors:
 - 102 - <a href="http://faculty.ycp.edu/~djhake2">Prof. Donald Hake</a>, <djhake2@ycp.edu>
 - 103 - <a href="http://faculty.ycp.edu/~kkambhampaty">Dr. Krishna Kambhampaty</a>, <kkambhampaty@ycp.edu>
 
-Office Hours: by appointment
+Office Hours: **Dr. Babcock** - M 10am-12pm, T 1-2pm, W 2-3pm, R 9-10am, or by appointment
 
  Section  | Days      |  Time       | Room    | Final Exam
  -------- | --------- |  ---------- | ------- | ----------
