@@ -106,13 +106,13 @@ Coins[] wallet = new Coins[2];
 
 // (1)
 
-coins[0] = new Coins();
+coins[0] = new Coins(0,0,0,0);
 coins[1] = new Coins(1,1,1,1);
 
 // (2)
 
-for (int i = 0; i < coins.length; i++) {
-  System.out.println("Coins " + i + ": " + coins[i].findCentsValue());
+for (int i = 0; i < wallet.length; i++) {
+  System.out.println("Coins " + i + ": " + wallet[i].findCentsValue());
 }
 {% endhighlight %}
 
@@ -197,8 +197,6 @@ for (int i = 0; i < emailList.size(); i++) {
 
 emailList.removeAll(toRemove);
 {% endhighlight %}
-
-ArrayList Demo Project: [arraylist-demo.zip](arraylist-demo.zip)
 
 Summary
 =======
