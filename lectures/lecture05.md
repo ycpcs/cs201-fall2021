@@ -1,223 +1,223 @@
 ---
 layout: default
-title: "Lecture 5: GUIs and MVC"
+title: "Lecture 5: Overloading, JUnit"
 ---
 
-## GUIs
+<!--
+Note: see the [course notes on arrays](../notes/javaArrays.html) for more detailed information about arrays in Java.
+-->
 
-We will be doing several programming assignments involving the creation of simple GUIs. Here is a quick overview of how GUIs work in Java.
+## Overloading
 
-## Events
+Unlike in C, Java allows for methods to be *overloaded*, i.e. two methods can have the same name. The requirement for overloaded messages is that they **must have different parameter lists**, i.e. either a different number of parameters or parameters of different types. Overloading provides flexibility when creating classes that have similar behaviors but with different types of data.
 
-Programs which have a graphical user interface are *event-driven*. That means that the program does not "do anything" unless an event occurs. Example of events are things like
-
--   mouse clicks
--   moving the mouse
--   pressing a button
-
-The program responds to events by establishing a *handler* for the event. An event handler is simply a method which is called whenever the event occurs. Handlers are specific to a particular window or GUI component. For example, if your program has multiple windows, then you will probably have one handler for each window.
-
-## Frames and Panels
-
-A *frame* is a top-level window. Generally, a frame is only used as a container for other GUI components. In Java, an instance of the **JFrame** class represents a frame.
-
-A *panel* is a rectangular region of a window. Panels are often used as a container for components such as buttons, text boxes, etc. Another use for panels is as a surface for drawing graphics; this is the way we will usually be using panels in this course. In Java, an instance of the **JPanel** class represents a panel.
-
-## paint() and repaint()
-
-To use a **JPanel** instance for drawing graphics, you can do the following:
-
--   create your own class as a subclass of **JPanel**
--   define a method called **paint** in your subclass
-
-The **paint** method will be called whenever the contents of your panel need to be redrawn. Note that drawing is event-driven; a call to the **paint** method is made automatically whenever a "window expose" event occurs, where a previously-hidden area of the panel becomes visible.
-
-A **paint** method looks like this:
+One common method that is often overloaded is *constructors*. By having multiple constructors, users can create objects in a variety of ways. For example, using the **Dog** class from [Lecture 2](lecture02.html), we can add a second constructor method that takes *no* parameters (often referred to as the *default constructor*)
 
 {% highlight java %}
-public void paint(Graphics g) {
-    ...
-{% endhighlight %}
+/**
+ * A simple Java class representing a Dog.
+ */
+public class Dog {
+    private String name;
+    private boolean goodDog;
 
-The parameter is a reference to an object whose type is **java.awt.Graphics**. A **Graphics** object has a large number of methods to perform drawing operations within whatever component is being drawn (e.g., the contents of your panel).
+    //
+    // Default constructor that takes no parameters
+    //
+    public Dog() {
+        this.name = "Fido";
+        this.goodDog = false;
+    }
 
-Example: drawing a solid blue rectangle:
+    // Constructor for Dog objects - should initialize fields
+    public Dog(String name, boolean goodDog) {
+        this.name = name;
+        this.goodDog = goodDog;
+    }
 
-{% highlight java %}
-g.setColor(Color.BLUE);
-g.fillRect(100, 75, 200, 100);
-{% endhighlight %}
+    //
+    public boolean isGoodDog() {
+        return goodDog;
+    }
 
-The rectangle drawn by the code above has its upper-left corner at position x=100, y=75, is 200 pixels wide, and 100 pixels high. Note that in Java graphics, y coordinates increase towards lower points on the screen (i.e., going down).
+    public void giveNewName(String newName) {
+        name = newName;
+    }
 
-If, in response to an event, you would like to *force* your panel to be redrawn, simply call the **repaint** method. This method takes no arguments. **You should NEVER call the paint() method directly in an event driven system!**
+    public void bark() {
+        System.out.println(name + " barks");
+    }
 
-## MVC architecture
+    public void respondToCall(String nameCalled) {
+        // Good dogs come when their name is called
+        if (name.equals(nameCalled) && goodDog) {
+            System.out.println(name + " comes");
+        } else {
+            System.out.println(name + " does not respond");
+        }
+    }
 
-Often times event driven systems will be designed using the **M**odel, **V**iew, **C**ontroller architecture (MVC). This architecture consists of three components that handle different aspects of the program:
-
--   **Model** - a set of state variables that store the current values of the system *independently* of how they are displayed. This typically will be a separate class with only fields, getters, and setters, i.e. no logic.
--   **View** - a rendering class that uses an *instance* of a model class to produce a visualization, e.g. GUI or console. The view should **NOT** modify the model.
--   **Controller** - a class that provides the connection between the view and the model usually through event handlers, i.e. when an event occurs, the controller decides if/how the model needs to be updated and then refreshes the view to display the updated state.
-
-Many times in graphics applications that only have a single view, the view and controller classes are combined into a view-controller class that handles accepting UI events, updating the model accordingly, and then redrawing the graphics window.
-
-Note that by maintaining a model *separate* from the view, we are not locked in to a *single* display format. Instead, we could create several alternative views that use the same model to display the information in different ways.
-
-### A complete example
-
-As a simple example program, we will implement a GUI application with a model that contains a single integer counter and a color index. Each time the mouse is clicked, the count increases. Mouse clicks also cause a rectangle displayed in the window to change color.
-
-The comments in the example explain what the code is doing.
-
-Here is the **CountModel** class:
-
-{% highlight java %}
-import java.awt.Color;
-
-public class CountModel {
-	// Fields for the system state
-	private int count;
-	private int colorIndex;
-
-    // as the count increases, the rectangle will cycle through these colors
-    public static final Color[] colors = { Color.RED, Color.GREEN, Color.BLUE };
-	
-	// Model constructor
-	public CountModel() {
-		count = 0;
-		colorIndex = 0;
-	}
-	
-	// Model getter methods
-	public int getCount() {
-		return count;
-	}
-	
-	public int getColorIndex() {
-		return colorIndex;
-	}
-	
-	// Increment count method
-	public void incrementCount() {
-		count++;
-	}
-	
-	// Increment color cyclically
-	public void incrementColorIndex() {
-		colorIndex = (colorIndex+1)%colors.length;
-	}
-}
-{% endhighlight %}
-
-
-Here is the **CountFrame** class:
-
-{% highlight java %}
-import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
-
-public class CountFrame extends JFrame {
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                CountFrame frame = new CountFrame();
-
-                // embed a CountPanel in the frame
-                frame.add(new CountPanel());
-
-                // "packing" the frame causes it to adjust its size based
-                // on the panel's preferred size
-                frame.pack();
-
-                // when the frame is closed, exit the program
-                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-                // making the frame visible starts the program
-                frame.setVisible(true);
-            }
-        });
+    public void train() {
+        goodDog = true;
     }
 }
 {% endhighlight %}
 
-There is no important behavior in the **CountFrame** class -it is simply a container for a **CountPanel**, which is where everything interesting will happen.
-
-Here is the **CountPanel** class:
+Then we can create two Dog objects using the different constructors
 
 {% highlight java %}
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+Dog lassie = new Dog("Lassie", true);
+Dog stray = new Dog();
 
-import javax.swing.JPanel;
+lassie.respondToCall("Lassie"); // "Lassie comes"
+stray.respondToCall("Lassie");  // "Fido does not respond" (wrong name)
+stray.respondToCall("Fido");    // "Fido does not respond" (not trained)
+{% endhighlight %}
 
-public class CountPanel extends JPanel {
-    // constants defining the preferred width and height of the panel
-    private static final int WIDTH = 400;
-    private static final int HEIGHT = 300;
+## JUnit
 
-    // this font will be used to display the count
-    private static final Font font = new Font("Dialog", Font.BOLD, 48);
+Classes are the "parts" of an object-oriented program.
 
-    // field storing the current model
-    private CountModel countModel;
+Testing makes sure that the parts work correctly. If the individual classes don't work correctly, the overall program is probably not going to work correctly. Therefore, it is very important to have a good set of tests for the classes in your program. 
 
-    // constructor
-    public CountPanel() {
-    	// Initialize model
-        countModel = new CountModel();
+Rather than continually running a program (which requires creating an application, instantiating an object(s), and manually checking inputs/outputs), instead we can *automate* testing using Java's **JUint** testing framework.
 
-        setBackground(Color.GRAY);
+[JUnit](http://junit.org/) is a *unit testing* framework for Java programs. To use JUnit, you write *test classes*. A test class is designed to test one Java class. It contains one or more *test methods*. Each test method is designed to test one particular feature of the class being tested. Often it is preferred to write the tests *before* (or *separate from*) the class as defined by the class *specification*.
 
-        setPreferredSize(new Dimension(WIDTH, HEIGHT));
+General structure of a JUnit test class
+=======================================
 
-        // install event handlers
-        addMouseListener(new MouseAdapter() {
-            @Override
-            public void mouseClicked(MouseEvent e) {
-                handleMouseClick(e);
-            }
-        });
-    }
+The test class's fields (member variables) store references to objects (generally, instances of the class being tested). These fields and the objects they point to are called the *test fixture*.
 
-	// Controller methods (event handlers)
-    private void handleMouseClick(MouseEvent e) {
-        // change the "state" of the model on mouse click
-        countModel.incrementCount();
-        countModel.incrementColorIndex();
+A test class's **setUp** method creates the test fixture objects. This method is called automatically before each test method is called to ensure that the tests are run against fresh objects. It must be marked with the **@Before** annotation.
 
-        // now that the state is changed,
-        // redraw the panel to reflect the state change
-        repaint();
-    }
+The test methods call methods on the test fixture objects and check to see that the methods compute the correct result, typically by calling an *assertion method*. Assertion methods are methods defined by the JUnit framework specifically for checking that calls to methods in classes being tested compute the expected result. Each test method must be marked with the **@Test** annotation.
 
-	// View methods (paint)
-    @Override
-    public void paint(Graphics g) {
-        super.paint(g); // call the superclass's paint() method to paint the background
+Ideally, a test method should focus on one particular method to be tested.
 
-        // draw the rectangle
-        g.setColor(countModel.colors[countModel.getColorIndex()]);
-        g.fillRect(20, 20, WIDTH - 40, HEIGHT - 40);
+Kinds of JUnit assertion methods:
 
-        // draw the count
-        g.setFont(font);
-        g.setColor(Color.WHITE);
-        g.drawString("" + countModel.getCount(), 50, 150);
-    }
+{% highlight java %}
+assertEquals(expected, actual); // assert that two values (expected and actual) are equal to each other
+
+assertTrue(value); // assert that a boolean value (condition) is true
+
+assertFalse(value); // assert that a boolean value (condition) is false
+{% endhighlight %}
+
+Most assertions in JUnit test classes will boil down to checking that the return value of a method call is equal to an expected value.
+
+If an assertion is not satisifed, it causes the test method containing the assertion to fail. If all assertions in a test method are satisifed, the test method containing the assertion passes. The goal of testing using JUnit is that all assertions in all test methods should pass.
+
+Eclipse has built-in support for running JUnit tests. To run a JUnit test class within eclipse, right-click on the test class, and choose **Run As...&rarr;JUnit test**. The result will be displayed in the JUnit window:
+
+-   Green bar: all of the test methods passed
+-   Red bar: at least one of the test methods failed
+
+<div class="callout">
+<b>Caution</b>: Simply passing all unit tests DOES NOT mean the class is CORRECT, only that it produces correct output for the <i>specific</i> input values. However, the more extensive the unit tests are, the more confidence there is in the correctness of the tested methods. It is good practice to write unit tests for <i>boundary</i>, i.e. unexpected, cases as well as invalid inputs.
+</div>
+
+JUnit Example
+=============
+
+As an example, let's consider a **Point** class defined as:
+
+{% highlight java %}
+public class Point {
+  // Fields
+  private int x;
+  private int y;
+
+  // Constructor
+  public Point(int x, int y) {
+    this.x = x;
+    this.y = y;
+  }
+
+  // Getters
+  public int getX() {
+    return x;
+  }
+
+  public int getY() {
+    return y;
+  }
+
+  // Setters
+  public void setX(int x) {
+    this.x = x;
+  }
+
+  public void setY(int y) {
+    this.y = y;
+  }
+
+  // Instance print method
+  public void print() {
+    System.out.println("x=" + x + ", y=" + y);
+  }
 }
 {% endhighlight %}
 
-The most important thing to think about as you look at this code is the event-driven nature. The **count** field is the "state" of the program stored in the *model*. Mouse click events cause this state to change through the *controller* methods. When the state changes, the panel is redrawn to reflect the state change through the *view* methods.
+Here's a very simple JUnit class for testing the **Point** class. We'll call the test class **PointTest**.
 
-Here is the code as an Eclipse project:
+{% highlight java %}
+import static org.junit.Assert.*;
+import org.junit.Before;
+import org.junit.Test;
 
-> [CS201_GUIExample_Gradle.zip](CS201_GUIExample_Gradle.zip)
+public class PointTest {
+  // Create test object references
+  private Point p;
+  private Point q;
 
-Here is a much better example project using a Model/View/Controller architecture:
+  @Before
+  public void setUp() throws Exception {
+    // Instantiate test objects
+    p = new Point(4, 5);
+    q = new Point(13, 14);
+  }
 
-> [CS201_GUIMVCDemo.zip](CS201_GUIMVCDemo.zip)
+  // Test class methods
+  @Test
+  public void testGetX() throws Exception {
+    assertEquals(4, p.getX());
+    assertEquals(13, q.getX());
+  }
+
+  @Test
+  public void testGetY() throws Exception {
+    assertEquals(5, p.getY());
+    assertEquals(14, q.getY());
+  }
+
+  @Test
+  public void testSetX() throws Exception {
+    p.setX(55);
+    assertEquals(55, p.getX());
+
+    q.setX(101);
+    assertEquals(101, q.getX());
+  }
+
+  @Test
+  public void testSetY() throws Exception {
+    p.setY(1331);
+    assertEquals(1331, p.getY());
+
+    q.setY(90125);
+    assertEquals(90125, q.getY());
+  }
+}
+{% endhighlight %}
+
+This is a very simple example, but it demonstrates the basic idea: for each method in the **Point** class, we want to have one or more test methods which check whether or not the method behaves correctly using some test input. Note that since the setter method does not return a value, we must use the getter method in the unit test, thus there is a dependency so we will want to *ensure* there are unit tests for the getter methods.
+
+Note that there is one method in **Point** that we didn't test - the **print** method. It is actually quite difficult to test methods that write output to **System.out**.
+
+Summary
+=======
+
+-   *overloading* allows for multiple methods to have the same *name* but different *parameter lists*
+-   *JUnit* allows you to test a class by using *assertions* to check that calling methods on objects belonging to that class work correctly

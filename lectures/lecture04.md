@@ -1,210 +1,223 @@
 ---
 layout: default
-title: "Lecture 4: Arrays and ArrayLists"
+title: "Lecture 4: GUIs and MVC"
 ---
 
-Note: see the [course notes on arrays](../notes/javaArrays.html) for more detailed information about arrays in Java.
+## GUIs
 
-## Java Arrays
+We will be doing several programming assignments involving the creation of simple GUIs. Here is a quick overview of how GUIs work in Java.
 
-Java arrays are a lot like C/C++ arrays.
+## Events
 
-The main difference is that Java arrays are *objects*, in the same way that instances of classes are objects. As with all objects in Java, instances of array are accessed through references. Thus, an array variable in Java is *not* the actual array: it is just a reference to an array. Thus we denote the datatype of a reference to an array using the datatype and empty []. Then we allocate the array in a similar fashion to other objects using the **new** command with specifying the number of elements the array should contain. **Note:** Like arrays in C, once an array is created, it's size is fixed.
+Programs which have a graphical user interface are *event-driven*. That means that the program does not "do anything" unless an event occurs. Example of events are things like
 
-Consider the following code to declare a reference to an **int[]**, i.e. an "array of ints", and then allocate the array to contain 6 elements:
+-   mouse clicks
+-   moving the mouse
+-   pressing a button
+
+The program responds to events by establishing a *handler* for the event. An event handler is simply a method which is called whenever the event occurs. Handlers are specific to a particular window or GUI component. For example, if your program has multiple windows, then you will probably have one handler for each window.
+
+## Frames and Panels
+
+A *frame* is a top-level window. Generally, a frame is only used as a container for other GUI components. In Java, an instance of the **JFrame** class represents a frame.
+
+A *panel* is a rectangular region of a window. Panels are often used as a container for components such as buttons, text boxes, etc. Another use for panels is as a surface for drawing graphics; this is the way we will usually be using panels in this course. In Java, an instance of the **JPanel** class represents a panel.
+
+## paint() and repaint()
+
+To use a **JPanel** instance for drawing graphics, you can do the following:
+
+-   create your own class as a subclass of **JPanel**
+-   define a method called **paint** in your subclass
+
+The **paint** method will be called whenever the contents of your panel need to be redrawn. Note that drawing is event-driven; a call to the **paint** method is made automatically whenever a "window expose" event occurs, where a previously-hidden area of the panel becomes visible.
+
+A **paint** method looks like this:
 
 {% highlight java %}
-int[] heaps;                 // (1)
-heaps = new int[6];          // (2)
+public void paint(Graphics g) {
+    ...
 {% endhighlight %}
 
-While line (1) creates a variable called **heaps** whose type is **int[]**, since it is only a reference to an array, and not the array itself, the variable is simply **null** at this point, i.e. it does not refer to an actual array.
+The parameter is a reference to an object whose type is **java.awt.Graphics**. A **Graphics** object has a large number of methods to perform drawing operations within whatever component is being drawn (e.g., the contents of your panel).
 
-Line (2) allocates the array object for storing 6 **int** elements, and assigns the reference to **heaps**. Here's a picture:
-
-> ![image](figures/arrayExample.png)
-
-Like arrays in C and C++, Java arrays are indexed starting at 0. So, the valid range of indices for this array is 0..5.
-
-Because arrays are accessed through references, it is possible to have two array variables storing references to the same array object. For example:
+Example: drawing a solid blue rectangle:
 
 {% highlight java %}
-int[] a;
-int[] b;
-
-a = new int[4];
-b = a;
-
-a[0] = 15;
-
-// (1)
-
-System.out.println(b[0]); // prints 15
-
-a[0] = 16;
-
-// (2)
-
-System.out.println(b[0]); // prints 16
+g.setColor(Color.BLUE);
+g.fillRect(100, 75, 200, 100);
 {% endhighlight %}
 
-As a picture, here's what's happening at point (1):
+The rectangle drawn by the code above has its upper-left corner at position x=100, y=75, is 200 pixels wide, and 100 pixels high. Note that in Java graphics, y coordinates increase towards lower points on the screen (i.e., going down).
 
-> ![image](figures/arrAlias1.png)
+If, in response to an event, you would like to *force* your panel to be redrawn, simply call the **repaint** method. This method takes no arguments. **You should NEVER call the paint() method directly in an event driven system!**
 
-Here's what's happening at point (2):
+## MVC architecture
 
-> ![image](figures/arrAlias2.png)
+Often times event driven systems will be designed using the **M**odel, **V**iew, **C**ontroller architecture (MVC). This architecture consists of three components that handle different aspects of the program:
 
-**Note:** This is also how arrays are passed into methods as parameters, the parameter refers to the same array object as the argument in the method call. Also, unlike in C, since array variables are references they can be *returned* from a method, i.e. methods can have array return types.
+-   **Model** - a set of state variables that store the current values of the system *independently* of how they are displayed. This typically will be a separate class with only fields, getters, and setters, i.e. no logic.
+-   **View** - a rendering class that uses an *instance* of a model class to produce a visualization, e.g. GUI or console. The view should **NOT** modify the model.
+-   **Controller** - a class that provides the connection between the view and the model usually through event handlers, i.e. when an event occurs, the controller decides if/how the model needs to be updated and then refreshes the view to display the updated state.
 
-### Array length
+Many times in graphics applications that only have a single view, the view and controller classes are combined into a view-controller class that handles accepting UI events, updating the model accordingly, and then redrawing the graphics window.
 
-One nice feature of Java that is not present in C and C++ is the ability to determine the exact number of elements in an array. If *arr* is an array, then
+Note that by maintaining a model *separate* from the view, we are not locked in to a *single* display format. Instead, we could create several alternative views that use the same model to display the information in different ways.
+
+### A complete example
+
+As a simple example program, we will implement a GUI application with a model that contains a single integer counter and a color index. Each time the mouse is clicked, the count increases. Mouse clicks also cause a rectangle displayed in the window to change color.
+
+The comments in the example explain what the code is doing.
+
+Here is the **CountModel** class:
 
 {% highlight java %}
-arr.length
-{% endhighlight %}
+import java.awt.Color;
 
-is the number of elements *that were allocated* for the array when it was *created*.
+public class CountModel {
+	// Fields for the system state
+	private int count;
+	private int colorIndex;
 
-For example, the following static method will concatinate the elements of any array of **String** values:
-
-{% highlight java %}
-public static String concat(String[] arr) {
-  String s == "";
-
-  for (i = 0; i < arr.length; i++) {
-    s += arr[i];
-  }
-
-  return s;
+    // as the count increases, the rectangle will cycle through these colors
+    public static final Color[] colors = { Color.RED, Color.GREEN, Color.BLUE };
+	
+	// Model constructor
+	public CountModel() {
+		count = 0;
+		colorIndex = 0;
+	}
+	
+	// Model getter methods
+	public int getCount() {
+		return count;
+	}
+	
+	public int getColorIndex() {
+		return colorIndex;
+	}
+	
+	// Increment count method
+	public void incrementCount() {
+		count++;
+	}
+	
+	// Increment color cyclically
+	public void incrementColorIndex() {
+		colorIndex = (colorIndex+1)%colors.length;
+	}
 }
 {% endhighlight %}
 
-This feature means we do not need to pass the length of the array to methods that take arrays as parameters, but may wish to pass a value indicating the number of *valid* array elements if only a portion of the array is being used.
 
-### Default values
-
-When an array object is created using the **new** operator, each element of the array is automatically initialized with a *default value*. The default value is 0 for all numeric element types, and the special *null* reference for all class and array element types.
-
-Here's a code snippet that illustrates the default value for an array of **int** values:
+Here is the **CountFrame** class:
 
 {% highlight java %}
-int[] t = new int[4];
-System.out.println(t[0]);  // guaranteed to print 0
-{% endhighlight %}
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
-### Arrays of references
+public class CountFrame extends JFrame {
+    public static void main(String[] args) {
+        SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+                CountFrame frame = new CountFrame();
 
-When an array has a class or array type as its element type, it stores references which are initially **null**. Thus after allocating the array, each element must also be allocated using one of the class's constructors. Otherwise, the array elements are the same as any other kind of variable, i.e. once an element is obtained using an index we can call any of the methods on the object.
+                // embed a CountPanel in the frame
+                frame.add(new CountPanel());
 
-For example:
+                // "packing" the frame causes it to adjust its size based
+                // on the panel's preferred size
+                frame.pack();
 
-{% highlight java %}
-Coins[] wallet = new Coins[2];
+                // when the frame is closed, exit the program
+                frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-// (1)
-
-coins[0] = new Coins();
-coins[1] = new Coins(1,1,1,1);
-
-// (2)
-
-for (int i = 0; i < coins.length; i++) {
-  System.out.println("Coins " + i + ": " + coins[i].findCentsValue());
-}
-{% endhighlight %}
-
-Here's what things look like at point (1):
-
-> ![image](figures/arrayOfCoins1.png)
-
-Note that the actual array objects have not been instantiated, only the references have been created (and initialized to **null** by default).
-
-At point (2) we have allocated the objects and assigned the array element references to them which looks like:
-
-> ![image](figures/arrayOfCoins2.png)
-
-### Out-of-Bounds access
-
-One important concern in C/C++ when dealing with arrays is that we need to be careful about accessing elements out-of-bounds (which may manifest itself in a variety of ways including continued execution of the program with data corruption). Since Java arrays contain a **.length** field, Java is able to detect invalid indices at runtime and throw an **ArrayAccessOutOfBounds** exception which typically will terminate the program (we will discuss handling exceptions later in the course). Thus we can never inadvertently access a Java array element with an invalid index.
-
-## (Quick Introduction to) ArrayLists
-
-While arrays in Java are a bit "safer" than arrays in C/C++, they still have many of the same limitations including having a fixed size once allocated. Alternatively, Java provides a set of **Collection** classes (which we will cover later in the course) that mimic arrays but with much more functionality. One such **Collection** class is known as an **ArrayList** (in the java.util package) which can be thought of as a dynamically resizing array. Thus the object will grow/shrink according to the number of objects stored in he collection.
-
-For example, let's say that you're writing a program to keep track of your friends' email addresses. You could represent the email addresses as strings, and use an **ArrayList** to store them:
-
-{% highlight java %}
-ArrayList<String> emailList = new ArrayList<String>();
-{% endhighlight %}
-
-Note that when declaring an **ArrayList** variable or creating a new **ArrayList** object, you must specify what type of objects the array list will contain. This type is called the *element type*.
-
-To add strings to the list, call the **add** method:
-
-{% highlight java %}
-emailList.add("jane_smith@yahoo.com");
-emailList.add("sally.jones@gmail.com");
-emailList.add("ben456@evilhacker.com");
-{% endhighlight %}
-
-Each object added to the list is appended onto the end of the sequence of objects.
-
-The **size** method returns an integer value specifying the number of objects currently in the list. The **get** method allows you to retrieve the object at a specified index, where 0 is the first object in the sequence, 1 is the second object, etc:
-
-{% highlight java %}
-// print all email addresses
-for (int i = 0; i < emailList.size(); i++) {
-    String email = emailList.get(i);
-    System.out.println(email);
-}
-{% endhighlight %}
-
-The **set** method takes an integer index and a reference to an object, and replaces the object at that index with the specified object. For example, if Jane Smith changes her email address, we could update our list as follows:
-
-{% highlight java %}
-String oldEmail = "jane_smith@yahoo.com";
-String newEmail = "jane_smith@us.ibm.com";
-for (int i = 0; i < emailList.size(); i++) {
-    String email = emailList.get(i);
-    if (email.equals(oldEmail)) {
-        emailList.set(i, newEmail);
+                // making the frame visible starts the program
+                frame.setVisible(true);
+            }
+        });
     }
 }
 {% endhighlight %}
 
-Note that we used the **equals** method to check whether an email address string was the same as Jane's previous email address. We will discuss the **equals** method in [Lecture 9](lecture09.html).
+There is no important behavior in the **CountFrame** class -it is simply a container for a **CountPanel**, which is where everything interesting will happen.
 
-Removing objects from a collection
-----------------------------------
-
-Sometimes, you might need to remove some number of objects from a collection. The easiest and safest way to accomplish this task is to use a temporary collection object to store the objects you want to remove, and then use the **removeAll** method to remove them from the main collection.
-
-For example, you might be concerned that email coming from the "evilhacker.com" site contains viruses. You could purge all addresses from this site from your email list as follows:
+Here is the **CountPanel** class:
 
 {% highlight java %}
-ArrayList<String> toRemove = new ArrayList<String>();
+import java.awt.Color;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
-for (int i = 0; i < emailList.size(); i++) {
-    String email = emailList.get(i);
-    if (email.endsWith("@evilhacker.com")) {
-        // mark this address for removal
-        toRemove.add(email);
+import javax.swing.JPanel;
+
+public class CountPanel extends JPanel {
+    // constants defining the preferred width and height of the panel
+    private static final int WIDTH = 400;
+    private static final int HEIGHT = 300;
+
+    // this font will be used to display the count
+    private static final Font font = new Font("Dialog", Font.BOLD, 48);
+
+    // field storing the current model
+    private CountModel countModel;
+
+    // constructor
+    public CountPanel() {
+    	// Initialize model
+        countModel = new CountModel();
+
+        setBackground(Color.GRAY);
+
+        setPreferredSize(new Dimension(WIDTH, HEIGHT));
+
+        // install event handlers
+        addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                handleMouseClick(e);
+            }
+        });
+    }
+
+	// Controller methods (event handlers)
+    private void handleMouseClick(MouseEvent e) {
+        // change the "state" of the model on mouse click
+        countModel.incrementCount();
+        countModel.incrementColorIndex();
+
+        // now that the state is changed,
+        // redraw the panel to reflect the state change
+        repaint();
+    }
+
+	// View methods (paint)
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g); // call the superclass's paint() method to paint the background
+
+        // draw the rectangle
+        g.setColor(countModel.colors[countModel.getColorIndex()]);
+        g.fillRect(20, 20, WIDTH - 40, HEIGHT - 40);
+
+        // draw the count
+        g.setFont(font);
+        g.setColor(Color.WHITE);
+        g.drawString("" + countModel.getCount(), 50, 150);
     }
 }
-
-emailList.removeAll(toRemove);
 {% endhighlight %}
 
-ArrayList Demo Project: [arraylist-demo.zip](arraylist-demo.zip)
+The most important thing to think about as you look at this code is the event-driven nature. The **count** field is the "state" of the program stored in the *model*. Mouse click events cause this state to change through the *controller* methods. When the state changes, the panel is redrawn to reflect the state change through the *view* methods.
 
-Summary
-=======
+Here is the code as an Eclipse project:
 
--   Java arrays are really *objects* that are accessed by references, just like objects that are instances of a class
--   The **length** property of an array indicates how many elements an array object has
--   Array elements are automatically initialized to a *default value*, which is 0 for numeric types and **null** for reference types (classes and arrays)
--   ArrayLists are similar to arrays but dynamically adjust to the number of elements stored in the collection, which can be retrieved using the **size** method.
--   *add* is used to insert new elements into an ArrayList and it is best to use the **removeAll** method to safely remove elements from an ArrayList
+> [CS201_GUIExample_Gradle.zip](CS201_GUIExample_Gradle.zip)
+
+Here is a much better example project using a Model/View/Controller architecture:
+
+> [CS201_GUIMVCDemo.zip](CS201_GUIMVCDemo.zip)

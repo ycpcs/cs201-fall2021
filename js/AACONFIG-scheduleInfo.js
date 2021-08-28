@@ -12,17 +12,17 @@ courseInfo.classPeriods = [
 		lab: new NumberedLabGradle(2, "Coins class")
 	},
 	{
-		topic: new Topic("Lecture 4: Arrays and ArrayLists", "lectures/lecture04.html"),
+		topic: new Topic("Lecture 3: Arrays and ArrayLists", "lectures/lecture03.html"),
 		reading: "3.1&ndash;3.9",
-		lab: new NumberedLabGradle(4, "Arrays and ArrayLists")
+		lab: new NumberedLabGradle(3, "Arrays and ArrayLists")
 	},
 	{
-		topic: new Topic("Lecture 5: GUIs and MVC", "lectures/lecture05.html"),
-		lab: new NumberedLabGradle(5, "Drag and Drop GUI")
+		topic: new Topic("Lecture 4: GUIs and MVC", "lectures/lecture04.html"),
+		lab: new NumberedLabGradle(4, "Drag and Drop GUI")
 	},
 	{
-		topic: new Topic("Lecture 3: Overloading, JUnit", "lectures/lecture03.html"),
-		lab: new NumberedLabGradle(3, "Testing Overloaded Constructors")
+		topic: new Topic("Lecture 5: Overloading, JUnit", "lectures/lecture05.html"),
+		lab: new NumberedLabGradle(5, "Testing Overloaded Constructors")
 	},
  	{
  		topic: new Topic("Lecture 6: File I/O, Exceptions", "lectures/lecture06.html"),

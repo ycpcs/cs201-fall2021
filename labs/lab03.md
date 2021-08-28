@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Lab 3: Testing Overloaded Constructors"
+title: "Lab 3: Arrays and ArrayLists"
 ---
 
 ## Getting Started
@@ -13,39 +13,97 @@ Select the **CS201\_Lab03\_Gradle** directory and in the **Import Module** dialo
 
 You should see a project called **CS201\_Lab03\_Gradle** in the Project window.
 
-To begin, run the program by right-clicking on the file **StartLab.java** in the **src/main/java/** directory, and then choosing
+Run the program by right-clicking on the file **ArrayandArrayList.java** in the **src/main/java/** directory, and then choosing
 
-> **Run 'StartLab.main()'**
+> **Run 'ArrayandArrayList.main()'**
 
-In the console window, type **yes** when prompted which should copy the **Coins.java** and **CoinsTest.java** files from your [Lab 2](lab02.html).
+Or subsequently by selecting **ArrayandArrayList** from the dropdown list in the top right corner of the IDE and clicking the green arrow.
 
-In this lab, you will build upon the classes from [Lab 2](lab02.html) to add several overloaded constructors along with corresponding unit tests.
+**There are also unit tests for this lab.** Test the class implementation by running the unit tests by right-clicking on the file **ArrayTest.java** in the **src/test/java/** directory, and then choosing
 
-**There is no executable application for this lab.** Instead, we will test the class implementation by running the unit tests by right-clicking on the file **CoinsTest.java** in the **src/test/java/** directory, and then choosing
+> **Run 'ArrayTest'**
 
-> **Run 'CoinsTest (1)'**
+Or subsequently by selecting **ArrayTest** from the dropdown list in the top right corner of the IDE and clicking the green arrow.
 
-Or subsequently by selecting **CoinsTest** from the dropdown list in the top right corner of the IDE and clicking the green arrow.
+## Your task
 
-## Your Task
+Implement the following static methods in the **ArrayAndArrayList** class:
 
-Make the following modifications to the **Coins** class:
+-   **readArray**: Takes two parameters, **keyboard** and **numElements**. **keyboard** is a **Scanner** object you can use to read input from the user. **numElements** is the number of integer values to read. The method should return a reference to an array containing the requested number of integer values.
 
-**(1)** Add a *default* constructor that takes **no** parameters and initializes all the fields to 0 *except* for 1 penny.
+-   **printArray**: Takes a parameter **arr**, an array of integer values. The method should print out the element values in the array.
 
-**(2)** Add a single parameter constructor that takes a **double** as a total starting amount *in dollars* and calculates the number of each denomination of coin. To accomplish this, you will need to convert the parameter to an *integer* number of cents and then repeatedly use integer division starting with the largest denomination (quarters) to determine the maximum number of each denomination this amount contains. Be sure to remove the amount of each denomination from the total before calculating the number of coins in the next smaller denomination.
+-   **reverseArray**: Takes a parameter **arr**, an array of integer values. The method should reverse the values in the elements of the array. For example, if passed an array containing the values **1 2 3**, the method should re-arrange the contents of the array so that it contains the values **3 2 1**.
 
-**(3)** Add a single parameter constructor that takes a **Coins** object and initializes the fields to the same values as the parameter object. **Note:** This is essentially making a *copy* of the parameter object. It is good practice to use the getter methods for the parameter object, however since the object is in the *same* class, the fields can actually be accessed directly.
+-   **readArrayList**: Takes two parameters, **keyboard** and **numElements**. **keyboard** is a **Scanner** object you can use to read input from the user. **numElements** is the number of integer values to read. The method should return a reference to an **ArrayList\<Integer\>** containing the requested number of integer values.
 
-**(4)** Add an **equals** method that takes a **Coins** object as a parameter and returns a **boolean**. The method should return **true** if all the fields of the class are equal to those of the parameter, and **false** otherwise.
+-   **printArrayList**: Takes a parameter **arrList**, an **ArrayList\<Integer\>** of integer values. The method should print out the element values in the ArrayList.
 
-Make the following modifications to the **CoinsTest** class:
+-   **reverseArrayList**: Takes a parameter **arrList**, an **ArrayList\<Integer\>** of integer values. The method should reverse the values in the elements of the ArrayList. For example, if passed an ArrayList containing the values **1 2 3**, the method should re-arrange the contents of the ArrayList so that it contains the values **3 2 1**.
 
-**(1)** Add several additional test **Coins** references.
+As you implement each method, be sure to comment out
 
-**(2)** In the **setUp** method, instantiate *at least* one new **Coins** object using each of the new constructors.
+> **throw new UnsupportedOperationException("TODO - implement");**
 
-**(3)** Add assert tests in the various getter test methods to check for proper initialization of the fields in the new test objects. **Note:** For the object instantiated using the **Coins** object parameter, use an **assertTrue** test that checks **both** that the *field* values are equal **and** the references for the new object and the one passed to the constructor are **different**.
+### Hints
+
+-   declare an array *reference* and allocate a **new** array in **readArray** using the **numElements** parameter value, then return the reference after loading in the values.
+-   to reverse the array (note you should **not** allocate a new one) consider creating a loop that swaps the first and last elements, second and next to last, etc. Alternatively, create a new temporary array and copy the elements from the original to the temporary in reverse order and then back to the original.
+-   declare an **ArrayList\<Integer\>** *reference* and allocate a **new** ArrayList (which will be empty) in **readArrayList** (note you do not need to use the **numElements** parameter value to create it). Then use the **numElements** parameter to control a loop that uses the ArrayList object's **add** method to insert the values, and return the reference to the ArrayList.
+-   to reverse the ArrayList, use a similar procedure to the array only with the **get** method to read a value and the **set** method to change a value at a given index. (Or look at the API for **ArrayList** to see if there are any methods that can do it for you - "*find an object, call a method*").
+
+## Testing
+
+In **src/test/java/(default package)** right-click on the appropriate test class and choose **Run As...&rarr;JUnit Test**. This will run the JUnit tests for the corresponding class. If you have correctly implemented the class, you will see a green bar, indicating that all tests have succeeded.
+
+## Running
+
+A **main** method is provided which you **should not** change. 
+
+Run the program by right-clicking on the file **ArrayAndArrayList.java** in the **src/main/java/(default package)** package, and then choosing
+
+> **Run As&rarr;Java Application**
+
+When you run the **main** method, you should see output looking something like this (user input in **bold**):
+
+<pre>
+Select:
+1 Array
+2 ArrayList
+0 Quit
+<b>1</b>
+How many values? 
+<b>5</b>
+Please enter 5 values:
+<b>9 0 1 2 5</b>
+You entered the following values:
+9 0 1 2 5 
+Now I am going to reverse the array for you...
+Here are the reversed array values:
+5 2 1 0 9 
+
+Select:
+1 Array
+2 ArrayList
+0 Quit
+<b>2</b>
+How many values? 
+<b>4</b>
+Please enter 5 values:
+<b>8 6 7 5</b>
+You entered the following values:
+8 6 7 5
+Now I am going to reverse the ArrayList for you...
+Here are the reversed ArrayList values:
+5 7 6 8 
+
+Select:
+1 Array
+2 ArrayList
+0 Quit
+<b>0</b>
+Goodbye
+</pre>
 
 ## Submitting
 

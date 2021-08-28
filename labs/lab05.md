@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Lab 5: Drag and Drop GUI"
+title: "Lab 5: Testing Overloaded Constructors"
 ---
 
 ## Getting Started
@@ -13,47 +13,39 @@ Select the **CS201\_Lab05\_Gradle** directory and in the **Import Module** dialo
 
 You should see a project called **CS201\_Lab05\_Gradle** in the Project window.
 
-Run the program by right-clicking on the file **CirclesFrame.java** in the **src/main/java/** directory, and then choosing
+To begin, run the program by right-clicking on the file **StartLab.java** in the **src/main/java/** directory, and then choosing
 
-> **Run 'CirclesFrame.main()'**
+> **Run 'StartLab.main()'**
 
-Or subsequently by selecting **CirclesFrame** from the dropdown list in the top right corner of the IDE and clicking the green arrow.
+In the console window, type **yes** when prompted which should copy the **Coins.java** and **CoinsTest.java** files from your [Lab 2](lab02.html).
+
+In this lab, you will build upon the classes from [Lab 2](lab02.html) to add several overloaded constructors along with corresponding unit tests.
+
+**There is no executable application for this lab.** Instead, we will test the class implementation by running the unit tests by right-clicking on the file **CoinsTest.java** in the **src/test/java/** directory, and then choosing
+
+> **Run 'CoinsTest (1)'**
+
+Or subsequently by selecting **CoinsTest** from the dropdown list in the top right corner of the IDE and clicking the green arrow.
 
 ## Your Task
 
-Modify the program so that it allows the user to drag an outline of a circle around the screen with the mouse, place the circle when the left mouse button is clicked, and increasing its radius when the right button is clicked. You should also keep track of the number of circles that have been placed.
+Make the following modifications to the **Coins** class:
 
-## Hints
+**(1)** Add a *default* constructor that takes **no** parameters and initializes all the fields to 0 *except* for 1 penny.
 
--   A **Circle** class has been provided that defines a circle using its *center* coordinates and *radius*. Since this class has *no setters* it is *immutable*, i.e. once the object is created, it's fields cannot be changed. **DO NOT MODIFY THIS CLASS.**
+**(2)** Add a single parameter constructor that takes a **double** as a total starting amount *in dollars* and calculates the number of each denomination of coin. To accomplish this, you will need to convert the parameter to an *integer* number of cents and then repeatedly use integer division starting with the largest denomination (quarters) to determine the maximum number of each denomination this amount contains. Be sure to remove the amount of each denomination from the total before calculating the number of coins in the next smaller denomination.
 
--   Consider what information the model class should contain. You can use a **Circle** object for the placed circle.
+**(3)** Add a single parameter constructor that takes a **Coins** object and initializes the fields to the same values as the parameter object. **Note:** This is essentially making a *copy* of the parameter object. It is good practice to use the getter methods for the parameter object, however since the object is in the *same* class, the fields can actually be accessed directly.
 
--   The **CirclesPanel** class should contain a field for the model as well as fields for the outlined circle's center and radius. The initial radius can be set to **CirclesModel.START_R**.
+**(4)** Add an **equals** method that takes a **Coins** object as a parameter and returns a **boolean**. The method should return **true** if all the fields of the class are equal to those of the parameter, and **false** otherwise.
 
--   Use the **handleMouseMove** controller method for when the mouse is being moved. This method should update the outline center fields with the current mouse position coordinates. You can get the coordinates of the mouse pointer using the **e** parameter to store into the **x** and **y** fields as follows:
+Make the following modifications to the **CoinsTest** class:
 
-{% highlight java %}
-    x = e.getX();
-    y = e.getY();
-{% endhighlight %}
+**(1)** Add several additional test **Coins** references.
 
--   Use the **handleMouseClick** controller method for when a mouse button is clicked. This method should make a new circle (consider the **addCircle** model method) when the left button is clicked as well as increment the counter and reset the outline radius. When the right button is clicked it should increment the radius of the outline by **CirclesModel.START_R**. You can check to see which mouse button was clicked as follows:
+**(2)** In the **setUp** method, instantiate *at least* one new **Coins** object using each of the new constructors.
 
-{% highlight java %}
-
-    if (e.getButton() == MouseEvent.BUTTON1) {
-        // left button
-        ...
-    } else if (e.getButton() == MouseEvent.BUTTON3) {
-        // right button
-        ...
-    }
-{% endhighlight %}
-
--   After the event handlers update the model, call **repaint()** to refresh the view.
-
--   Use the **drawOval** and **fillOval** methods to draw the circles. Note that to draw a circle using these methods, the parameters are the *upper-left* corner of a bounding rectangle/square, and the width and height of the rectangle. Consider how the center and radius relate to the drawing parameters. **DO NOT MODIFY THE MODEL FIELDS**.
+**(3)** Add assert tests in the various getter test methods to check for proper initialization of the fields in the new test objects. **Note:** For the object instantiated using the **Coins** object parameter, use an **assertTrue** test that checks **both** that the *field* values are equal **and** the references for the new object and the one passed to the constructor are **different**.
 
 ## Submitting
 
