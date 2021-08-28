@@ -214,10 +214,6 @@ public class CountPanel extends JPanel {
 
 The most important thing to think about as you look at this code is the event-driven nature. The **count** field is the "state" of the program stored in the *model*. Mouse click events cause this state to change through the *controller* methods. When the state changes, the panel is redrawn to reflect the state change through the *view* methods.
 
-Here is the code as an Eclipse project:
-
-> [CS201_GUIExample_Gradle.zip](CS201_GUIExample_Gradle.zip)
-
-Here is a much better example project using a Model/View/Controller architecture:
+Here is another example project using a Model/View/Controller architecture:
 
 > [CS201_GUIMVCDemo.zip](CS201_GUIMVCDemo.zip)
