@@ -11,6 +11,12 @@ Aug 25   | [CS201\_Lecture01\_Gradle.zip](CS201_Lecture01_Gradle.zip)
 Aug 27   | [CS201\_Lecture02\_Gradle.zip](CS201_Lecture02_Gradle.zip)  
 Aug 31   | [CS201\_Lecture03\_Gradle.zip](CS201_Lecture03_Gradle.zip)  
 Sep 2    | [CS201\_Lecture04\_Gradle.zip](CS201_Lecture04_Gradle.zip) <br />  [CS201\_GUIMVCDemo\_Gradle.zip](CS201_GUIMVCDemo_Gradle.zip)
+Sep 7    | [CS201\_Lecture05\_Gradle.zip](CS201_Lecture05_Gradle.zip)  
+Sep 9    | [CS201\_Lecture06\_Gradle.zip](CS201_Lecture06_Gradle.zip)  
+Sep 14   | [CS201\_Lecture07\_Gradle.zip](CS201_Lecture07_Gradle.zip)  
+Sep 16   | [CS201\_Lecture08\_Gradle.zip](CS201_Lecture08_Gradle.zip)  
+Sep 21   | [CS201\_Lecture09\_Gradle.zip](CS201_Lecture09_Gradle.zip)  
+Sep 23   | [CS201\_Lecture10\_Gradle.zip](CS201_Lecture10_Gradle.zip)  
 
 <!--
 Additional examples

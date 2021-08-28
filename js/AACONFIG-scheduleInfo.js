@@ -2,50 +2,50 @@
 
 courseInfo.classPeriods = [
 	{
-		topic: new Topic("Lecture 1: Introduction, Primitive Java", "lectures/lecture01.html"),
+		topic: new DoubleTopic("Lecture 1: Introduction, Primitive Java", "lectures/lecture01.html","CS201_Lecture01_Gradle.zip", "examples/CS201_Lecture01_Gradle.zip"),
 		reading: "1.1&ndash;1.6",
 		lab: new NumberedLabGradle(1, "Dog Years")
 	},
 	{
-		topic: new Topic("Lecture 2: Classes, Objects/References, Encapsulation", "lectures/lecture02.html"),
+		topic: new DoubleTopic("Lecture 2: Classes, Objects/References, Encapsulation", "lectures/lecture02.html","CS201_Lecture02_Gradle.zip", "examples/CS201_Lecture02_Gradle.zip"),
 		reading: "2.1&ndash;2.3",
 		lab: new NumberedLabGradle(2, "Coins class")
 	},
 	{
-		topic: new Topic("Lecture 3: Arrays and ArrayLists", "lectures/lecture03.html"),
+		topic: new DoubleTopic("Lecture 3: Arrays and ArrayLists", "lectures/lecture03.html", "CS201_Lecture03_Gradle.zip", "examples/CS201_Lecture03_Gradle.zip"),
 		reading: "3.1&ndash;3.9",
 		lab: new NumberedLabGradle(3, "Arrays and ArrayLists")
 	},
 	{
-		topic: new Topic("Lecture 4: GUIs and MVC", "lectures/lecture04.html"),
+		topic: new TripleTopic("Lecture 4: GUIs and MVC", "lectures/lecture04.html", "CS201_Lecture04_Gradle.zip", "examples/CS201_Lecture04_Gradle.zip", "CS201_GUIMVCDemo_Gradle.zip","examples/CS201_GUIMVCDemo_Gradle.zip"),
 		lab: new NumberedLabGradle(4, "Drag and Drop GUI")
 	},
 	{
-		topic: new Topic("Lecture 5: Overloading, JUnit", "lectures/lecture05.html"),
+		topic: new DoubleTopic("Lecture 5: Overloading, JUnit", "lectures/lecture05.html", "CS201_Lecture05_Gradle.zip", "examples/CS201_Lecture05_Gradle.zip"),
 		lab: new NumberedLabGradle(5, "Testing Overloaded Constructors")
 	},
  	{
- 		topic: new Topic("Lecture 6: File I/O, Exceptions", "lectures/lecture06.html"),
+ 		topic: new DoubleTopic("Lecture 6: File I/O, Exceptions", "lectures/lecture06.html", "CS201_Lecture06_Gradle.zip","examples/CS201_Lecture06_Gradle.zip"),
  		reading: "2.5&ndash;2.6",
  		lab: new NumberedLabGradle(6, "Text File I/O")
  	},
  	{
- 		topic: new Topic("Lecture 7: Exceptions", "lectures/lecture07.html"),
+ 		topic: new DoubleTopic("Lecture 7: Exceptions", "lectures/lecture07.html", "CS201_Lecture07_Gradle.zip", "examples/CS201_Lecture07_Gradle.zip"),
  		reading: "2.5",
  		lab: new NumberedLabGradle(7, "Exceptions")
  	},
  	{
- 		topic: new Topic("Lecture 8: Inheritance", "lectures/lecture08.html"),
+ 		topic: new DoubleTopic("Lecture 8: Inheritance", "lectures/lecture08.html", "CS201_Lecture08_Gradle.zip","examples/CS201_Lecture08_Gradle.zip"),
  		reading: "4.1&ndash;4.2",
  		lab: new NumberedLabGradle(8, "Inheritance and Polymorphism")
  	},
  	{
- 		topic: new Topic("Lecture 9: Inheritance (continued)", "lectures/lecture09.html"),
+ 		topic: new DoubleTopic("Lecture 9: Inheritance (continued)", "lectures/lecture09.html", "CS201_Lecture09_Gradle.zip","examples/CS201_Lecture09_Gradle.zip"),
  		reading: "4.3&ndash;4.4",
  		lab: new NumberedLabGradle(9, "Inheriting Fields and Methods")
  	},
  	{
- 		topic: new Topic("Lecture 10: Type casts, instanceof, Object class, Interfaces", "lectures/lecture10.html"),
+ 		topic: new DoubleTopic("Lecture 10: Type casts, instanceof, Object class, Interfaces", "lectures/lecture10.html", "CS201_Lecture10_Gradle.zip","examples/CS201_Lecture10_Gradle.zip"),
  		lab: new NumberedLabGradle(10, "Comparable, Sorting")
  	},
  	{
