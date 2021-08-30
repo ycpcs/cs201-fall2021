@@ -5,6 +5,10 @@ title: "Example Code"
 
 This page links to lecture example code.
 
+<div class="callout">
+<b>Make sure you have set up the outer project directory properly as described in the Resources tab and load the example code via File&rarr;New&rarr;Module from Existing Sources... as a Gradle project.</b>
+</div>
+
 Date     |    File                          
 -------- | --------------------------------
 Aug 25   | [CS201\_Lecture01\_Gradle.zip](CS201_Lecture01_Gradle.zip)  
