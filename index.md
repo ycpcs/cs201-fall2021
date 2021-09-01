@@ -26,7 +26,7 @@ Welcome to the website for CS 201, Fundamentals of Computer Science II, at York 
 
 ## News
 * **Aug 25** &mdash; Welcome back!
-* **Sep 3** &mdash; [Assignment 1 Milestone 1](assign/assign01.html) is due.
+* **Updated - Sep 6** &mdash; [Assignment 1 Milestone 1](assign/assign01.html) is due.
 * **Sep 16** &mdash; [Assignment 1 Milestone 2](assign/assign01.html) is due.
 
 <!--
