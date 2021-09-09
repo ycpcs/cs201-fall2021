@@ -3,7 +3,7 @@ layout: default
 title: "Lecture 6: File I/O, Exceptions"
 ---
 
-Note: The [course notes on File I/O and Exceptions](../notes/exceptionsFileIO.html) will be useful.
+Note: The [course notes on File I/O and Exceptions](notes/exceptionsFileIO.html) will be useful.
 
 ## File I/O
 
