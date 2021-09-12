@@ -117,13 +117,13 @@ Note that the default board is 300x300 such that each cell is 100x100 pixels on 
 
 Add functionality to allow the current game state to be saved and loaded from a file. The format of the file should be human readable and represent the board using **X**, **O**, and space with three lines containing three characters per line. Following the board should be the marker of the player whos turn it is. For example, if the current board state is
 
------------
+<pre>
  O | X | O  
 ---|---|---
    | X |   
 ---|---|---
  X |   | O 
------------
+</pre>
 
 with it being **X**'s turn, the file would contain
 
