@@ -8,9 +8,9 @@ The tutors' job is to help students in the course learn the material.  Please do
 
 A schedule is forthcoming.
 
-# Evening Sessions - Tuesday/Thursday, 6:00pm to 8:30pm in KEC124 
+# Evening Sessions - Monday-Thursday, 6:00pm to 8:30pm in KEC124 
 
-Drop-in tutoring sessions will be held Tuesdays and Thursdays from
+Drop-in tutoring sessions will be held Monday through Thursday from
 6:00pm to 8:30pm in KEC124.  These sessions are a great way to get help with labs,
 assignments, or anything else you have questions about.
 
