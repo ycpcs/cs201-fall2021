@@ -55,7 +55,7 @@ courseInfo.classPeriods = [
  		topic: new Topic("** Exam 1", "")
  	},
  	{
- 		topic: new Topic("Lecture 11: Generic methods and classes", "lectures/lecture11.html"),
+ 		topic: new TripleTopic("Lecture 11: Generic methods and classes", "lectures/lecture11.html", "CS201_Lecture11_Gradle.zip","examples/CS201_Lecture11_Gradle.zip", "CS201_Lecture11_Gradle_Final.zip","examples/CS201_Lecture11_Gradle_Final.zip"),
  		reading: "4.5&ndash;4.7",
  		lab: new NumberedLabGradle(11, "Using Generic Containers and Algorithms")
  	},
