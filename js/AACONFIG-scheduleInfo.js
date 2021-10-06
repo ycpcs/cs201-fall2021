@@ -60,7 +60,7 @@ courseInfo.classPeriods = [
  		lab: new NumberedLabGradle(11, "Using Generic Containers and Algorithms")
  	},
  	{
- 		topic: new Topic("Lecture 12: Generic methods, functors", "lectures/lecture12.html"),
+ 		topic: new DoubleTopic("Lecture 12: Generic methods, functors", "lectures/lecture12.html", "CS201_Lecture12_Gradle.zip","examples/CS201_Lecture12_Gradle.zip"),
  		reading: "4.8",
  		lab: new NumberedLabGradle(12, "Functors")
  	},

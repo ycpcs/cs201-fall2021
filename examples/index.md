@@ -21,6 +21,8 @@ Sep 14   | [CS201\_Lecture07\_Gradle.zip](CS201_Lecture07_Gradle.zip)
 Sep 16   | [CS201\_Lecture08\_Gradle.zip](CS201_Lecture08_Gradle.zip)  
 Sep 21   | [CS201\_Lecture09\_Gradle.zip](CS201_Lecture09_Gradle.zip)  
 Sep 23   | [CS201\_Lecture10\_Gradle.zip](CS201_Lecture10_Gradle.zip)  
+Oct 6    | [CS201\_Lecture11\_Gradle.zip](CS201_Lecture11_Gradle.zip) <br />  [CS201\_Lecture11\_Gradle\_Final.zip](CS201_Lecture11_Gradle_Final.zip)
+Oct 8    | [CS201\_Lecture12\_Gradle.zip](CS201_Lecture12_Gradle.zip)  
 
 <!--
 Additional examples
