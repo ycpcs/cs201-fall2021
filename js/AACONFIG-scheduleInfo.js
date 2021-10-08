@@ -101,21 +101,21 @@ courseInfo.classPeriods = [
  		topic: new Topic("** Exam 2", "")
  	},
  	{
- 		topic: new Topic("Lecture 18: Parallel Programming with Threads", "lectures/lecture18.html"),
+ 		topic: new DoubleTopic("Lecture 18: Parallel Programming with Threads", "lectures/lecture18.html", "CS201_Lecture18_Gradle.zip","examples/CS201_Lecture18_Gradle.zip"),
  		lab: new NumberedLabGradle(18, "Parallel Estimation of π")
  	},
  	{
- 		topic: new Topic("Lecture 19: Stacks and Queues", "lectures/lecture19.html"),
+ 		topic: new DoubleTopic("Lecture 19: Stacks and Queues", "lectures/lecture19.html", "CS201_Lecture19_Gradle.zip","examples/CS201_Lecture19_Gradle.zip"),
  		reading: "6.6",
  		lab: new NumberedLabGradle(19, "Palindromes")
  	},
  	{
- 		topic: new Topic("Lecture 20: Sets and Maps", "lectures/lecture20.html"),
+ 		topic: new DoubleTopic("Lecture 20: Sets and Maps", "lectures/lecture20.html", "CS201_Lecture20_Gradle.zip","examples/CS201_Lecture20_Gradle.zip"),
  		reading: "6.7-6.8",
  		lab: new NumberedLabGradle(20, "Word Count")
  	},
  	{
- 		topic: new Topic("Lecture 21: Recursion", "lectures/lecture21.html"),
+ 		topic: new DoubleTopic("Lecture 21: Recursion", "lectures/lecture21.html", "CS201_Lecture21_Gradle.zip","examples/CS201_Lecture21_Gradle.zip"),
  		reading: "7.1, 7.3",
  		lab: new NumberedLabGradle(21, "Recursion")
  	},
@@ -125,7 +125,7 @@ courseInfo.classPeriods = [
  		lab: new NumberedLabNoFile(22, "Proof by Induction")
  	},
  	{
- 		topic: new Topic("Lecture 23: Memoization and Dynamic Programming", "lectures/lecture23.html"),
+ 		topic: new DoubleTopic("Lecture 23: Memoization and Dynamic Programming", "lectures/lecture23.html", "CS201_Lecture23_Gradle.zip","examples/CS201_Lecture23_Gradle.zip"),
  		reading: "7.6",
  		lab: new NumberedLabGradle(23, "Binomial Coefficient")
  	},
