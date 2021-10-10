@@ -34,6 +34,11 @@ Welcome to the website for CS 201, Fundamentals of Computer Science II, at York 
 * **Oct 15** &mdash; [Assignment 3 Milestone 1](assign/assign03.html) is due.
 * **Oct 28** &mdash; [Assignment 3 Milestone 2](assign/assign03.html) is due.
 * **Oct 29** &mdash; **Exam 2**
+* **Nov 16** &mdash; [Assignment 4 Milestone 1](assign/assign04.html) is due.
+* **Dec 2** &mdash; [Assignment 4 Milestone 2](assign/assign04.html) is due.
+* **Dec 3** &mdash; **Exam 3**
+* **FRIDAY DEC 10 10:15am-12:15pm - FINAL EXAM CS201.101 (10am section)**
+* **FRIDAY DEC 10 12:45am-2:45pm - FINAL EXAM CS201.102 and CS201.103 (12pm section)**
 
 <!--
 * **Feb 2** &mdash; Welcome back!

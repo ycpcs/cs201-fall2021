@@ -3,9 +3,9 @@ layout: default
 title: "Assignment 4: Mandelbrot Set Renderer"
 ---
 
-**Milestone 1** Wednesday, Apr 21st by 11:59 PM
+**Milestone 1** Tuesday, Nov 16th by 11:59 PM
 
-**Milestone 2** Tuesday, May 4th by 11:59 PM
+**Milestone 2** Thursday, Dec 2nd by 11:59 PM
 
 Getting Started
 ===============
@@ -153,7 +153,7 @@ Your task is to implement the **computeIterations()** method, which will be call
 For example, for a single task to compute the entire region (without using threads)
 
 {% highlight java %}
-MandelbrotTask task = MandelbrotTask(x1, y1, x2, y2, 0, WIDTH, 0, HEIGHT, WIDTH, HEIGHT, iterCounts);
+MandelbrotTask task = MandelbrotTask(x1, y1, x2, y2, 0, WIDTH, 0, HEIGHT, iterCounts);
 task.run();
 {% endhighlight %}
 
