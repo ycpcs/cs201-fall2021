@@ -144,6 +144,8 @@ public class MandelbrotTask implements Runnable {
 
 The idea is that a **MandelbrotTask** object will compute iteration counts for a portion of the image with rows from **startRow** (inclusive) to **endRow** (exclusive) and columns from **startCol** (inclusive) to **endCol** (exclusive) from the entire region of the complex plane specified by **x1**, **y1**, **x2**, and **y2**.  The **iterCounts** array is the single global array used to store the iteration counts for the overall image (where the first dimension is rows and the second dimension is columns).
 
+**Hint:** When determining the complex number for a given **row** and **col**, divide the range of the x/y bounds by the number of steps for the array corresponding to that dimension minus 1 (why?) which can be determined using the **.length** field for the **iterCount** array (remember it is a 2D array so may have a different number of rows than columns).
+
 ### Mandelbrot class
 
 The program has commented code to prompt the user for a pair of x,y coordinates specifying corners of a rectangle in the complex plane, the default coordinates are (-2,-2) to (2,2). The program also has commented code to prompt the user to enter the name of a file ending with the ".png" file extension, the default filename is **output.png**. Next, the program has commented code to prompt the user to select a color palette, the default is the provided SimpleGradientColorChooser. Lastly, the program has commented code to prompt the user for the number of parallel threads to use, the default is 1. The program will render a **WIDTH** by **HEIGHT** pixel image which visualizes the specified region of the Mandelbrot set.
